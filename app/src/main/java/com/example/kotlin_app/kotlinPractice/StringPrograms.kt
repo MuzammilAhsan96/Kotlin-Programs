@@ -31,6 +31,25 @@ fun main() {
     reverse("abcd")
     println()
 
+    var bo:Boolean= checkNumbers("1234")
+    if(bo==true)
+    {
+        println("String contains only numbers")
+    }
+    else
+    {
+        println("String doesn't contain only numbers")
+    }
+    bo= checkNumbers("1a234")
+    if(bo==true)
+    {
+        println("String contains only numbers")
+    }
+    else
+    {
+        println("String doesn't contain only numbers")
+    }
+
 }
 fun printDup(s:String):IntArray
 {
@@ -82,4 +101,25 @@ fun reverse(s:String)
         print(s[s.length-1])
         reverse(s.substring(0,s.length-1))
     }
+}
+
+fun checkNumbers(s:String):Boolean
+{
+    var flag:Int=0
+    for (i in s.indices)
+    {
+        if(s[i]>='0'&& s[i]<='9')
+        {
+            flag=0
+        }
+        else{
+            flag=1
+            break
+        }
+    }
+    if (flag==0)
+    {
+        return true
+    }
+    return false
 }
