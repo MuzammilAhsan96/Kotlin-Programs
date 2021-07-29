@@ -1,5 +1,7 @@
 package com.example.kotlin_app.kotlinPractice
 
+import java.util.*
+
 fun main() {
     var count:IntArray=printDup("rajababajaka")
     for (i in 0..255)
@@ -49,7 +51,8 @@ fun main() {
     {
         println("String doesn't contain only numbers")
     }
-
+    println("No. of vovwels = "+ countVowels("rahul tiwari"))
+    println("No. of Consonants = "+ countConsonants("rahul tiwari"))
 }
 fun printDup(s:String):IntArray
 {
@@ -122,4 +125,31 @@ fun checkNumbers(s:String):Boolean
         return true
     }
     return false
+}
+
+fun countVowels(s:String):Int
+{
+    var count:Int=0
+    var s1= s.lowercase(Locale.getDefault())
+    for (i in s.indices)
+    {
+        if(s1[i]=='a'||s1[i]=='e'||s1[i]=='i'||s1[i]=='o'||s1[i]=='u')
+        {
+            count++
+        }
+    }
+    return count
+}
+fun countConsonants(s:String):Int
+{
+    var count:Int=0
+    var s1= s.lowercase(Locale.getDefault())
+    for (i in s.indices)
+    {
+        if(s1[i]!='a'&&s1[i]!='e'&&s1[i]!='i'&&s1[i]!='o'&&s1[i]!='u'&&s1[i]!=' '&&s1[i]!='.'&&s1[i]!='?')
+        {
+            count++
+        }
+    }
+    return count
 }
